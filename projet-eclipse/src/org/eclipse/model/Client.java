@@ -4,12 +4,10 @@ public class Client extends Utilisateur {
 
 	private Commande commande;
 	
-	
 
 	public Client() {
 		super();
 	}
-
 
 
 	public Client(int id, String nom, String prenom, String numTele, String email, Adresse adresse, Commande commande) {
@@ -33,12 +31,5 @@ public class Client extends Utilisateur {
 				+ getAdresse() + ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()="
 				+ hashCode() + "]";
 	}
-
-
-
-	
-
-	
-	
 
 }

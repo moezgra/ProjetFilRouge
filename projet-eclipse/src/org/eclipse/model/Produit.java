@@ -3,7 +3,7 @@ package org.eclipse.model;
 public class Produit {
 	private int id;
 	private String designation;
-	private String discription;
+	private String description;
 	private float prixUnit;
 	private int quantStock;
 	private String urlImage;
@@ -12,11 +12,11 @@ public class Produit {
 		super();
 	}
 
-	public Produit(int id, String designation, String discription, float prixUnit, int quantStock, String urlImage) {
+	public Produit(int id, String designation, String description, float prixUnit, int quantStock, String urlImage) {
 		super();
 		this.id = id;
 		this.designation = designation;
-		this.discription = discription;
+		this.description = description;
 		this.prixUnit = prixUnit;
 		this.quantStock = quantStock;
 		this.urlImage = urlImage;
@@ -38,12 +38,12 @@ public class Produit {
 		this.designation = designation;
 	}
 
-	public String getDiscription() {
-		return discription;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDiscription(String discription) {
-		this.discription = discription;
+	public void setDescription(String discription) {
+		this.description = discription;
 	}
 
 	public float getPrixUnit() {
@@ -72,7 +72,7 @@ public class Produit {
 
 	@Override
 	public String toString() {
-		return "Produit [id=" + id + ", designation=" + designation + ", discription=" + discription + ", prixUnit="
+		return "Produit [id=" + id + ", designation=" + designation + ", description=" + description + ", prixUnit="
 				+ prixUnit + ", quantStock=" + quantStock + ", urlImage=" + urlImage + "]";
 	}
 

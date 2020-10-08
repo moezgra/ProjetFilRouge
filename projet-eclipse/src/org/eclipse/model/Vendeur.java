@@ -6,8 +6,6 @@ public class Vendeur extends Utilisateur {
 	private Produit [] produit;
 	
 	
-
-
 	public Produit[] getProduit() {
 		return produit;
 	}
