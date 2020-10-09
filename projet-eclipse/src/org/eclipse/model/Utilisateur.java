@@ -6,19 +6,29 @@ public class Utilisateur {
 	private String prenom;
 	private String numTele;
 	private String email;
+	private String login;
+	private String password;
 	private Adresse adresse;
+	 
 	public Utilisateur() {
 		super();
 	}
-	public Utilisateur(int id, String nom, String prenom, String numTele, String email, Adresse adresse) {
+	
+	
+	public Utilisateur(int id, String nom, String prenom, String numTele, String email, String login, String password,
+			Adresse adresse) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.numTele = numTele;
 		this.email = email;
+		this.login = login;
+		this.password = password;
 		this.adresse = adresse;
 	}
+
+
 	public int getId() {
 		return id;
 	}
@@ -55,10 +65,31 @@ public class Utilisateur {
 	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
 	}
+	
+	public String getLogin() {
+		return login;
+	}
+
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Utilisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", numTele=" + numTele + ", email="
-				+ email + ", adresse=" + adresse + "]";
+				+ email + ", login=" + login + ", password=" + password + ", adresse=" + adresse + "]";
 	}
 	
 	

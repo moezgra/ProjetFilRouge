@@ -4,12 +4,11 @@ import java.util.ArrayList;
 
 import org.eclipse.model.Produit;
 
-import com.sun.tools.classfile.Annotation.element_value;
-
 
 public class ProduitService {
 	
-	ArrayList<Produit>produits = new ArrayList();
+	ArrayList<Produit>produits = new ArrayList<Produit>();
+	
 
 	public ProduitService() {
 		super();
@@ -48,21 +47,27 @@ public class ProduitService {
 		
 	}
 	
-	public void findById (Produit produit) {
+	public Produit findById(int produitId) {
 		for (Produit element : produits) {
-			if(element.findById() == produit.findById()) {
-				
+			if(produitId == element.getId()) {
+				return element;
 			}
-			
 		}
+		return null;
 	}
-		
+	
+	// on iterate dans tab produits, si qté d'un produit >0 alors on ajoute ce produit dans le tableau des "disponibles"
+	public ArrayList<Produit> findByQuantiteEnStock() {
+		ArrayList<Produit> disponibles = new ArrayList<>();
+		for (Produit produit : produits) {
+			if (produit.getQuantStock() > 0) {
+				disponibles.add(produit);
+			}
+		}
+		return disponibles;
+	}
 	
 	
-		
-	
-
-
 	@Override
 	public String toString() {
 		return "ProduitService [produits=" + produits + "]";
