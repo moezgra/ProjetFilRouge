@@ -9,12 +9,11 @@ public class Client extends Utilisateur {
 		super();
 	}
 
-
-	public Client(int id, String nom, String prenom, String numTele, String email, Adresse adresse, Commande commande) {
-		super(id, nom, prenom, numTele, email, adresse);
+	public Client(int id, String nom, String prenom, String numTele, String email, String login, String password,
+			Adresse adresse, Commande commande) {
+		super(id, nom, prenom, numTele, email, login, password, adresse);
 		this.commande = commande;
 	}
-
 
 	public Commande getCommande() {
 		return commande;

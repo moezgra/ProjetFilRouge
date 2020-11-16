@@ -2,6 +2,7 @@ package org.eclipse.service;
 
 import java.util.ArrayList;
 
+
 import org.eclipse.model.Produit;
 
 
@@ -10,14 +11,11 @@ public class ProduitService {
 	ArrayList<Produit>produits = new ArrayList<Produit>();
 	
 
-	public ProduitService() {
-		super();
-	}
 
-	public ProduitService(ArrayList<Produit> produits) {
-		super();
-		this.produits = produits;
-		
+	public ProduitService() {
+		produits.add(new Produit(1, "Machine ï¿½ laver Xlm12", "machine puissante 1500 t/mn", 487, 27, "www.zff.fe"));
+		produits.add(new Produit(2, "Tv tft 120cm", "Ecran plat ï¿½cristaux gï¿½nï¿½ration x845", 1250, 22, "www.zfr.fe"));
+		produits.add(new Produit(3, "Ordinateur portable dell", "cpu9, ddr=250gb, rm=16gb", 845, 56, "www.xzd.fr"));
 	}
 
 	public ArrayList<Produit> getProduits() {
@@ -56,7 +54,7 @@ public class ProduitService {
 		return null;
 	}
 	
-	// on iterate dans tab produits, si qté d'un produit >0 alors on ajoute ce produit dans le tableau des "disponibles"
+	// on iterate dans tab produits, si qtï¿½ d'un produit >0 alors on ajoute ce produit dans le tableau des "disponibles"
 	public ArrayList<Produit> findByQuantiteEnStock() {
 		ArrayList<Produit> disponibles = new ArrayList<>();
 		for (Produit produit : produits) {

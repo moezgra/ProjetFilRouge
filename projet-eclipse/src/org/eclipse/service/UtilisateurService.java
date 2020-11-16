@@ -6,17 +6,22 @@ import org.eclipse.model.Produit;
 import org.eclipse.model.Utilisateur;
 
 
+
+
 public class UtilisateurService {
 	ArrayList<Utilisateur>utilisateurs = new ArrayList<Utilisateur>();
 
 	public UtilisateurService() {
-		super();
+		utilisateurs.add(new Utilisateur(1, "dupont","marc", "0615324684", "dp@gmail.com", "dupontmarc", "123", "15 rue de Paris 75010", "vendeur"));
+		utilisateurs.add(new Utilisateur(2, "Morel","Claude", "client"));
+		utilisateurs.add(new Utilisateur(3, "Jean","Jhon", "client"));
 	}
 
 	public UtilisateurService(ArrayList<Utilisateur> utilisateurs) {
 		super();
 		this.utilisateurs = utilisateurs;
 	}
+	
 
 	public ArrayList<Utilisateur> getUtilisateurs() {
 		return utilisateurs;
@@ -26,7 +31,7 @@ public class UtilisateurService {
 		this.utilisateurs = utilisateurs;
 	}
 	
-	
+		
 	public void save(Utilisateur utilisateur) {
 		utilisateurs.add(utilisateur);
 		
