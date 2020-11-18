@@ -13,9 +13,11 @@ public class ProduitService {
 
 
 	public ProduitService() {
-		produits.add(new Produit(1, "Machine ï¿½ laver Xlm12", "machine puissante 1500 t/mn", 487, 27, "www.zff.fe"));
-		produits.add(new Produit(2, "Tv tft 120cm", "Ecran plat ï¿½cristaux gï¿½nï¿½ration x845", 1250, 22, "www.zfr.fe"));
-		produits.add(new Produit(3, "Ordinateur portable dell", "cpu9, ddr=250gb, rm=16gb", 845, 56, "www.xzd.fr"));
+		produits.add(new Produit(1, "Machine à laver Xlm12", "machine puissante 1500 t/mn", 487, 27, "www.zff.fe"));
+		produits.add(new Produit(2, "Tv tft 120cm", "Ecran plat ï¿½cristaux génération x845", 1250, 22, "www.zfr.fe"));
+		produits.add(new Produit(3, "Ordinateur portable dell", "cpu9, ddr=250gb, rm=16gb", 270, 56, "www.xzd.fr"));
+		produits.add(new Produit(4, "réfrigérateur Samsung", "cpu9, 180cm, 3 coffres à glaces", 845, 56, "www.xzd.fr"));
+		produits.add(new Produit(5, "cuisinière gaz", "Table gaz 4 foyers, four gaz, 56L, Blanc", 85, 56, "www.xzd.fr"));
 	}
 
 	public ArrayList<Produit> getProduits() {
@@ -40,7 +42,7 @@ public class ProduitService {
 			}
 		}
 	}
-	public ArrayList<Produit> findAll(Produit produit) {
+	public ArrayList<Produit> findAll() {
 		return produits;
 		
 	}

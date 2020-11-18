@@ -8,12 +8,13 @@ public class Client extends Utilisateur {
 	public Client() {
 		super();
 	}
-
-	public Client(int id, String nom, String prenom, String numTele, String email, String login, String password,
-			Adresse adresse, Commande commande) {
-		super(id, nom, prenom, numTele, email, login, password, adresse);
+	
+	
+	public Client(int id, String nom, String prenom, String login, String password, String type, Commande commande) {
+		super(id, nom, prenom, login, password, type);
 		this.commande = commande;
 	}
+
 
 	public Commande getCommande() {
 		return commande;
@@ -23,12 +24,13 @@ public class Client extends Utilisateur {
 		this.commande = commande;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Client [commande=" + commande + ", getId()=" + getId() + ", getNom()=" + getNom() + ", getPrenom()="
-				+ getPrenom() + ", getNumTele()=" + getNumTele() + ", getEmail()=" + getEmail() + ", getAdresse()="
-				+ getAdresse() + ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + "]";
+		return "Client [commande=" + commande + "]";
 	}
+
+	
+	
 
 }

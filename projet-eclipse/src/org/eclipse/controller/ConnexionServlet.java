@@ -23,19 +23,19 @@ public class ConnexionServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String nom = request.getParameter("nom");
-		String prenom = request.getParameter("prenom");
-		Utilisateur utilisateur = utilisateurService.findByLoginAndPassword(String login, string password);
+		String login = request.getParameter("login");
+		String password = request.getParameter("password");
+		Utilisateur utilisateur = utilisateurService.findByLoginAndPassword(login, password);
 		if (utilisateur == null) {
 			response.sendRedirect("connexion");
 		} else {
 			HttpSession session = request.getSession();
 			session.setAttribute("utilisateur", utilisateur);
-			if (utilisateur.getType().equals("producteur")) {
-				response.sendRedirect("production");
+			if (utilisateur.getType().equals("vendeur")) {
+				response.sendRedirect("vente");
 				
 			} else {
-				response.sendRedirect("consommation");
+				response.sendRedirect("achat");
 
 			}
 		}
