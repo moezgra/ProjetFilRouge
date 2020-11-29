@@ -2,97 +2,51 @@ package org.eclipse.model;
 
 public class Utilisateur {
 	private int id;
-	private String nom;
-	private String prenom;
-	private String login;
-	private String password;
-	private String type;
-	
+	private String adresseEmail;
+	private String motDePasse;
 	
 	public Utilisateur() {
 		super();
 	}
 
-
-	public Utilisateur(int id, String nom, String prenom, String login, String password, String type) {
+	public Utilisateur(int id, String adresseEmail, String motDePasse) {
 		super();
 		this.id = id;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.login = login;
-		this.password = password;
-		this.type = type;
+		this.adresseEmail = adresseEmail;
+		this.motDePasse = motDePasse;
 	}
-
 
 	public int getId() {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
-	public String getNom() {
-		return nom;
+	public String getAdresseEmail() {
+		return adresseEmail;
 	}
 
-
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setAdresseEmail(String adresseEmail) {
+		this.adresseEmail = adresseEmail;
 	}
 
-
-	public String getPrenom() {
-		return prenom;
+	public String getMotDePasse() {
+		return motDePasse;
 	}
 
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
 	}
-
-
-	public String getLogin() {
-		return login;
-	}
-
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-
-	public String getType() {
-		return type;
-	}
-
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
 
 	@Override
 	public String toString() {
-		return "Utilisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", login=" + login + ", password="
-				+ password + ", type=" + type + "]";
+		return "Utilisateur [id=" + id + ", adresseEmail=" + adresseEmail + ", motDePasse=" + motDePasse + "]";
 	}
 	
 	
 	
 	
-
+	
 }

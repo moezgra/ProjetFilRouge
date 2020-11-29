@@ -1,32 +1,42 @@
 package org.eclipse.model;
 
-import java.util.Arrays;
+
 
 public class Vendeur extends Utilisateur {
-	private Produit produit;
-
+	
+	private String designation;
+	private String numSiret;
+	
 	public Vendeur() {
 		super();
 	}
 
-	public Vendeur(int id, String nom, String prenom, String login, String password, String type, Produit produit) {
-		super(id, nom, prenom, login, password, type);
-		this.produit = produit;
+	public Vendeur(int id, String adresseEmail, String motDePasse, String designation, String numSiret) {
+		super(id, adresseEmail, motDePasse);
+		this.designation = designation;
+		this.numSiret = numSiret;
 	}
 
-	public Produit getProduit() {
-		return produit;
+	public String getDesignation() {
+		return designation;
 	}
 
-	public void setProduit(Produit produit) {
-		this.produit = produit;
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+
+	public String getNumSiret() {
+		return numSiret;
+	}
+
+	public void setNumSiret(String numSiret) {
+		this.numSiret = numSiret;
 	}
 
 	@Override
 	public String toString() {
-		return "Vendeur [produit=" + produit + "]";
+		return "Vendeur [designation=" + designation + ", numSiret=" + numSiret + "]";
 	}
-	
 	
 	
 	

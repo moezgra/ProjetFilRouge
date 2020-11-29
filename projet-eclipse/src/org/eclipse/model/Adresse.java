@@ -1,6 +1,7 @@
 package org.eclipse.model;
 
 public class Adresse {
+	private int id;
 	private String rue;
 	private String ville;
 	private String codePo;
@@ -8,9 +9,17 @@ public class Adresse {
 	public Adresse() {
 		super();
 	}
-
+	
 	public Adresse(String rue, String ville, String codePo) {
 		super();
+		this.rue = rue;
+		this.ville = ville;
+		this.codePo = codePo;
+	}
+
+	public Adresse(int id, String rue, String ville, String codePo) {
+		super();
+		this.id = id;
 		this.rue = rue;
 		this.ville = ville;
 		this.codePo = codePo;
@@ -19,7 +28,15 @@ public class Adresse {
 	public String getRue() {
 		return rue;
 	}
+	
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public void setRue(String rue) {
 		this.rue = rue;
 	}
@@ -42,8 +59,9 @@ public class Adresse {
 
 	@Override
 	public String toString() {
-		return "Adresse [rue=" + rue + ", ville=" + ville + ", codePo=" + codePo + "]";
+		return "Adresse [id=" + id + ", rue=" + rue + ", ville=" + ville + ", codePo=" + codePo + "]";
 	}
+
 	
 	
 
