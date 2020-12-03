@@ -14,8 +14,8 @@ public class UtilisateurService {
 	private ArrayList<Vendeur> vendeurs = new ArrayList<Vendeur>();
 	
 	public UtilisateurService() {
-		acheteurs.add(new Acheteur(1, "m@gmail.com", "123", "123456", "eiffel", "gustave", new Adresse()));
-		vendeurs.add(new Vendeur(1, "m@gmail.com", "123", "leader plant", "12345"));
+		acheteurs.add(new Acheteur(1, "moez@gmail.com", "moez", "eiffel", "gustave", new Adresse()));
+		vendeurs.add(new Vendeur(1, "grami@gmail.com", "grami", "leader plant", "12345"));
 		
 	}
 

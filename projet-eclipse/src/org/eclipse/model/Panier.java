@@ -1,68 +1,91 @@
 package org.eclipse.model;
 
+import java.util.ArrayList;
+
+
 
 public class Panier {
 	private int id;
-	private int nomArticle;
-	private int qteArticle;
-	private float prixUniArticle;
-	private float prixTotalArticle;
-	private float prixTotPan;
+	private int totalPanier;
+	
+	ArrayList<LigneCommandePanierProduit> panierProduits = new ArrayList<LigneCommandePanierProduit>();
+	Acheteur acheteur = new Acheteur();
+
+	public Panier(ArrayList<LigneCommandePanierProduit> panierProduits, Acheteur acheteur) {
+		super();
+		this.panierProduits = panierProduits;
+		this.acheteur = acheteur;
+	}
+
+	public Panier(Acheteur acheteur) {
+		super();
+		this.acheteur = acheteur;
+	}
+
 	public Panier() {
 		super();
+
 	}
-	public Panier(int id, int nomArticle, int qteArticle, float prixUniArticle, float prixTotalArticle,
-			float prixTotPan) {
-		super();
-		this.id = id;
-		this.nomArticle = nomArticle;
-		this.qteArticle = qteArticle;
-		this.prixUniArticle = prixUniArticle;
-		this.prixTotalArticle = prixTotalArticle;
-		this.prixTotPan = prixTotPan;
+
+	public ArrayList<LigneCommandePanierProduit> getPanier() {
+		return panierProduits;
 	}
-	public int getId() {
-		return id;
+
+	public void setPanier(ArrayList<LigneCommandePanierProduit> panier) {
+		this.panierProduits = panier;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public Acheteur getAcheteur() {
+		return acheteur;
 	}
-	public int getNomArticle() {
-		return nomArticle;
+
+	public void setAcheteur(Acheteur acheteur) {
+		this.acheteur = acheteur;
 	}
-	public void setNomArticle(int nomArticle) {
-		this.nomArticle = nomArticle;
+
+	public void addInCart(LigneCommandePanierProduit panier) {
+		panierProduits.add(panier);
 	}
-	public int getQteArticle() {
-		return qteArticle;
+
+	public void removeInCart(LigneCommandePanierProduit panier) {
+		panierProduits.remove(panier);
 	}
-	public void setQteArticle(int qteArticle) {
-		this.qteArticle = qteArticle;
+
+	public LigneCommandePanierProduit findById(int id) {
+		for (int i = 0; i < panierProduits.size(); i++) {
+			LigneCommandePanierProduit findlignedeCommandePanierProduit = panierProduits.get(i);
+			if (id == findlignedeCommandePanierProduit.getId()) {
+				return panierProduits.get(i);
+			}
+
+		}
+		return null;
 	}
-	public float getPrixUniArticle() {
-		return prixUniArticle;
+
+	public void updateOne(int id, LigneCommandePanierProduit ligneCommandePanierProduit) {
+		for (int i = 0; i < panierProduits.size(); i++) {
+			LigneCommandePanierProduit findCommandePanierProduit = panierProduits.get(i);
+			if (id == findCommandePanierProduit.getId()) {
+				panierProduits.remove(findCommandePanierProduit);
+				panierProduits.add(ligneCommandePanierProduit);
+			}
+		}
 	}
-	public void setPrixUniArticle(float prixUniArticle) {
-		this.prixUniArticle = prixUniArticle;
+
+	public float prixTotalPanier() {
+		float prixTotal = 0;
+		for (LigneCommandePanierProduit produit : panierProduits) {
+			prixTotal = prixTotal + produit.montant();
+
+		}
+		return prixTotal;
 	}
-	public float getPrixTotalArticle() {
-		return prixTotalArticle;
+
+	public ArrayList<LigneCommandePanierProduit> findAll() {
+		return panierProduits;
+
 	}
-	public void setPrixTotalArticle(float prixTotalArticle) {
-		this.prixTotalArticle = prixTotalArticle;
-	}
-	public float getPrixTotPan() {
-		return prixTotPan;
-	}
-	public void setPrixTotPan(float prixTotPan) {
-		this.prixTotPan = prixTotPan;
-	}
-	@Override
-	public String toString() {
-		return "Panier [id=" + id + ", nomArticle=" + nomArticle + ", qteArticle=" + qteArticle + ", prixUniArticle="
-				+ prixUniArticle + ", prixTotalArticle=" + prixTotalArticle + ", prixTotPan=" + prixTotPan + "]";
-	}
-	
+}
 	
 
-}
+

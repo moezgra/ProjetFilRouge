@@ -3,77 +3,104 @@ package org.eclipse.model;
 public class Produit {
 	private int id;
 	private String designation;
-	private String description;
-	private float prixUnit;
-	private int quantStock;
-	private String urlImage;
+	private int prixUnit;
+	private int quantStockee;
+	private String imageURL;
+
 
 	public Produit() {
 		super();
 	}
 
-	public Produit(int id, String designation, String description, float prixUnit, int quantStock, String urlImage) {
+		
+	public Produit(int id) {
+		super();
+		this.id = id;
+	}
+
+	
+	
+	public Produit(int id, String designation, int prixUnit, int quantStockee) {
 		super();
 		this.id = id;
 		this.designation = designation;
-		this.description = description;
 		this.prixUnit = prixUnit;
-		this.quantStock = quantStock;
-		this.urlImage = urlImage;
+		this.quantStockee = quantStockee;
 	}
+
+
+	public Produit(int id, String designation, int prixUnit, int quantStockee, String imageURL) {
+		super();
+		this.id = id;
+		this.designation = designation;
+		this.prixUnit = prixUnit;
+		this.quantStockee = quantStockee;
+		this.imageURL = imageURL;
+	}
+
 
 	public int getId() {
 		return id;
 	}
 
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 
 	public String getDesignation() {
 		return designation;
 	}
 
+
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String discription) {
-		this.description = discription;
-	}
 
 	public float getPrixUnit() {
 		return prixUnit;
 	}
 
-	public void setPrixUnit(float prixUnit) {
+
+	public void setPrixUnit(int prixUnit) {
 		this.prixUnit = prixUnit;
 	}
 
-	public int getQuantStock() {
-		return quantStock;
+
+	public int getQuantStockee() {
+		return quantStockee;
 	}
 
-	public void setQuantStock(int quantStock) {
-		this.quantStock = quantStock;
+
+	public void setQuantStockee(int quantStockee) {
+		this.quantStockee = quantStockee;
+	}
+	
+	public String getImageURL() {
+		return imageURL;
 	}
 
-	public String getUrlImage() {
-		return urlImage;
+
+	public void setImageURL(String imageURL) {
+		this.designation = imageURL;
 	}
 
-	public void setUrlImage(String urlImage) {
-		this.urlImage = urlImage;
-	}
 
 	@Override
 	public String toString() {
-		return "Produit [id=" + id + ", designation=" + designation + ", description=" + description + ", prixUnit="
-				+ prixUnit + ", quantStock=" + quantStock + ", urlImage=" + urlImage + "]";
+		return "Produit [id=" + id + ", designation=" + designation + ", prixUnit=" + prixUnit + ", quantStockee="
+				+ quantStockee + ", imageURL=" + imageURL + "]";
 	}
+	
+	
 
-}
+	
+	
+	
+	
+	
+	
+
+}	

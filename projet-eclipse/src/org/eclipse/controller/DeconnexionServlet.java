@@ -12,6 +12,11 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/deconnexion")
 public class DeconnexionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	
+	public DeconnexionServlet() {
+		super();
+	}	
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,6 +24,11 @@ public class DeconnexionServlet extends HttpServlet {
 		session.invalidate();
 		response.sendRedirect("connexion");
 
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		doGet(request, response);
 	}
 
 }
