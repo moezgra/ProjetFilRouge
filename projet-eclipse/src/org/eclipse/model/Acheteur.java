@@ -12,15 +12,21 @@ public class Acheteur extends Utilisateur{
 		super();
 	}
 
-	public Acheteur(int id, String adresseEmail, String motDePasse, String nom, String prenom,
-			Adresse adresse) {
-		super(id, adresseEmail, motDePasse);
+	public Acheteur(String nom, String prenom, Adresse adresse) {
+		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
 	}
 
-	
+	public Acheteur(int id, String nom, String prenom, String adresseEmail, String motDePasse, String type, String nom2,
+			String prenom2, Adresse adresse) {
+		super(id, nom, prenom, adresseEmail, motDePasse, type);
+		nom = nom2;
+		prenom = prenom2;
+		this.adresse = adresse;
+	}
+
 	public String getNom() {
 		return nom;
 	}
@@ -45,11 +51,7 @@ public class Acheteur extends Utilisateur{
 		this.adresse = adresse;
 	}
 
-	@Override
-	public String toString() {
-		return "Acheteur [nom=" + nom + ", prenom=" + prenom + ", adresse="	+ adresse + "]";
-	}
 	
-	
+}	
 
-}
+

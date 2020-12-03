@@ -8,10 +8,10 @@ public class Panier {
 	private int id;
 	private int totalPanier;
 	
-	ArrayList<LigneCommandePanierProduit> panierProduits = new ArrayList<LigneCommandePanierProduit>();
+	ArrayList<LignePanier> panierProduits = new ArrayList<LignePanier>();
 	Acheteur acheteur = new Acheteur();
 
-	public Panier(ArrayList<LigneCommandePanierProduit> panierProduits, Acheteur acheteur) {
+	public Panier(ArrayList<LignePanier> panierProduits, Acheteur acheteur) {
 		super();
 		this.panierProduits = panierProduits;
 		this.acheteur = acheteur;
@@ -27,11 +27,11 @@ public class Panier {
 
 	}
 
-	public ArrayList<LigneCommandePanierProduit> getPanier() {
+	public ArrayList<LignePanier> getPanier() {
 		return panierProduits;
 	}
 
-	public void setPanier(ArrayList<LigneCommandePanierProduit> panier) {
+	public void setPanier(ArrayList<LignePanier> panier) {
 		this.panierProduits = panier;
 	}
 
@@ -43,17 +43,17 @@ public class Panier {
 		this.acheteur = acheteur;
 	}
 
-	public void addInCart(LigneCommandePanierProduit panier) {
+	public void addInCart(LignePanier panier) {
 		panierProduits.add(panier);
 	}
 
-	public void removeInCart(LigneCommandePanierProduit panier) {
+	public void removeInCart(LignePanier panier) {
 		panierProduits.remove(panier);
 	}
 
-	public LigneCommandePanierProduit findById(int id) {
+	public LignePanier findById(int id) {
 		for (int i = 0; i < panierProduits.size(); i++) {
-			LigneCommandePanierProduit findlignedeCommandePanierProduit = panierProduits.get(i);
+			LignePanier findlignedeCommandePanierProduit = panierProduits.get(i);
 			if (id == findlignedeCommandePanierProduit.getId()) {
 				return panierProduits.get(i);
 			}
@@ -62,9 +62,9 @@ public class Panier {
 		return null;
 	}
 
-	public void updateOne(int id, LigneCommandePanierProduit ligneCommandePanierProduit) {
+	public void updateOne(int id, LignePanier ligneCommandePanierProduit) {
 		for (int i = 0; i < panierProduits.size(); i++) {
-			LigneCommandePanierProduit findCommandePanierProduit = panierProduits.get(i);
+			LignePanier findCommandePanierProduit = panierProduits.get(i);
 			if (id == findCommandePanierProduit.getId()) {
 				panierProduits.remove(findCommandePanierProduit);
 				panierProduits.add(ligneCommandePanierProduit);
@@ -74,14 +74,14 @@ public class Panier {
 
 	public float prixTotalPanier() {
 		float prixTotal = 0;
-		for (LigneCommandePanierProduit produit : panierProduits) {
-			prixTotal = prixTotal + produit.montant();
+		for (LignePanier produit : panierProduits) {
+			//prixTotal = prixTotal + produit.montant();
 
 		}
 		return prixTotal;
 	}
 
-	public ArrayList<LigneCommandePanierProduit> findAll() {
+	public ArrayList<LignePanier> findAll() {
 		return panierProduits;
 
 	}

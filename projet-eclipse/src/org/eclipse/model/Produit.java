@@ -39,6 +39,15 @@ public class Produit {
 	}
 
 
+	public Produit(String designation, int prixUnit, int quantStockee, String imageURL) {
+		super();
+		this.designation = designation;
+		this.prixUnit = prixUnit;
+		this.quantStockee = quantStockee;
+		this.imageURL = imageURL;
+	}
+
+
 	public int getId() {
 		return id;
 	}
@@ -59,7 +68,7 @@ public class Produit {
 	}
 
 
-	public float getPrixUnit() {
+	public int getPrixUnit() {
 		return prixUnit;
 	}
 

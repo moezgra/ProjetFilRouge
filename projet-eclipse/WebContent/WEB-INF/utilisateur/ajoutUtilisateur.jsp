@@ -9,28 +9,29 @@
 </head>
 <body>
 
-	<form id="formUser" method="POST" action ="ajoutUtilisateur">
-		<div class="form-group">
-			<label for="exampleInputEmail1">Addresse email</label> <input
-				type="email" class="form-control" name="email"
-				aria-describedby="emailHelp" placeholder="Taper votre email"> 
-		</div>
-		<div class="form-group">
-			<label for="passe">Password</label> <input
-				type="password" class="form-control" name="mot de passe"
-				placeholder="Mot de passe">
-		</div>
-		<div class="form-group">
-			<select name="type" id="type">
-				<option value=""></option>
-				<option value="acheteur">acheteur</option>
-				<option value=vendeur>vendeur</option>
-			</select>
-		</div>
-	</form>
-	<script type="text/javascript">
+	
+	<form action="AjoutUtilisateurServlet" method="post">
+	
+		<label for="adresseEmail"> Adresse Email : </label>
+		<input	name="adresseEmail" type="text" /> 
 		
-	<%-- <%@ include file="../../js/form.js"%> --%>
+		<label for="motDePasse">Mote de passe : </label>
+		<input name="motDePasse" type="text">
+		
+		<label for="nom"> Nom :</label>
+		<input 	name="nom" type="text" />
+		
+		<label for=prenom> Prénom :</label>
+		<input name="prenom" type="text" />
+		
+		<label for="type"> Type :</label>
+		<input name="type" type="text" />
+		
+		<button class="btn btn-primary">Ajouter</button>
+	</form>
+		
+		
+	
 		
 	</script>
 </body>

@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MyConnection {
-	private static String url = "jdbc:mysql://localhost:3306/projet-eclipse?useSSL=false&serverTimezone=UTC";
+	private static String url = "jdbc:mysql://localhost:3306/ecommerce?useSSL=false&serverTimezone=UTC";
 	private static String utilisateur = "root";
 	private static String motDePasse = "root";
 	private static Connection connexion = null;
@@ -14,7 +14,7 @@ public class MyConnection {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connexion = DriverManager.getConnection(url, utilisateur, motDePasse);
-			System.out.println("connexion à la BD : succès");
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

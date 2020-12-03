@@ -19,12 +19,17 @@
 </head>
 <body>
 	<%@ include file="../../header/headerVendeur.jsp"%>
-	
-<form action="ajoutProduit" method="post">
-<label for="designation"> Désignation : </label><input name ="designation" type="text" />
-<label for="prixUnit"> Prix unitaire de l'article : </label><input name="prixUnitaire" type="text">
-<label for="quantStockee"> Quantité en stock :</label><input name="quantiteStock" type="number" />
-<button class="btn btn-primary"> Ajouter</button>
-</form>
+
+	<form action="ajoutProduit" method="post">
+		<label for="designation"> Désignation : </label>
+		<input	name="designation" type="text" /> 
+		<label for="prixUnitaire">Prix unitaire de l'article : </label>
+		<input name="prixUnitaire" type="number">
+		<label for="quantiteStock"> Quantité en stock :</label>
+		<input 	name="quantiteStock" type="number" />
+		<label for=imageUrl> Image URL :</label>
+		<input name="imageUrl" type="text" />
+		<button class="btn btn-primary">Ajouter</button>
+	</form>
 </body>
 </html>

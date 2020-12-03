@@ -16,6 +16,12 @@ public class Vendeur extends Utilisateur {
 		this.designation = designation;
 		this.numSiret = numSiret;
 	}
+	
+	public Vendeur(String adresseEmail, String motDePasse, String designation, String numSiret) {
+		super(adresseEmail, motDePasse);
+		this.designation = designation;
+		this.numSiret = numSiret;
+	}
 
 	public String getDesignation() {
 		return designation;
