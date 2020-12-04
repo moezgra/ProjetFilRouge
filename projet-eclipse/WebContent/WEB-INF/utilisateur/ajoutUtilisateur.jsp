@@ -8,24 +8,27 @@
 <title>Ajout Utilisateur</title>
 </head>
 <body>
-
+<h1>Inscription</h1>
 	
-	<form action="AjoutUtilisateurServlet" method="post">
+	<form action="AjoutUtilisateur" method="post">
 	
 		<label for="adresseEmail"> Adresse Email : </label>
-		<input	name="adresseEmail" type="text" /> 
+		<input	name="adresseEmail" type="text" /> <br>
 		
 		<label for="motDePasse">Mote de passe : </label>
-		<input name="motDePasse" type="text">
+		<input name="motDePasse" type="password"> <br>
 		
 		<label for="nom"> Nom :</label>
-		<input 	name="nom" type="text" />
+		<input 	name="nom" type="text" /> <br>
 		
 		<label for=prenom> Prénom :</label>
-		<input name="prenom" type="text" />
+		<input name="prenom" type="text" /> <br>
 		
 		<label for="type"> Type :</label>
-		<input name="type" type="text" />
+		<select id=type name=type>
+			<option value="acheteur">Client</option>
+			<option value="vendeur">Vendeur</option>
+		</select> <br>
 		
 		<button class="btn btn-primary">Ajouter</button>
 	</form>

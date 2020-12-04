@@ -123,30 +123,29 @@ public class UtilisateurDao implements Dao<Utilisateur> {
 		return utilisateurs;
 	}
 	
-	public ArrayList<Utilisateur> findByNomAndPrenom(String nom, String prenom) {
-		ArrayList<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
+	public Utilisateur findByAdresseEmailAndMotDePasse(String email, String password) {
+		Utilisateur utilisateur = null;
 		Connection c = MyConnection.getConnection();
 		if (c != null) {
 			try {
-				PreparedStatement ps = c.prepareStatement("SELECT * FROM Utilisateur WHERE nom = ? AND prenom = ?;");
-				ps.setString(1, nom);
-				ps.setString(2, prenom);				
+				PreparedStatement ps = c.prepareStatement("SELECT * FROM Utilisateur WHERE adresseEmail = ? AND motDePasse = ?;");
+				ps.setString(1, email);
+				ps.setString(2, password);				
 				ResultSet result = ps.executeQuery();
-				while (result.next()) {
+				if (result.next()) {
 					int num = result.getInt(1);
 					String n = result.getString(2);
 					String p = result.getString(3);
 					String adresseEmail = result.getString(4);
 					String motDePasse = result.getString(5);
 					String type = result.getString(6);
-					Utilisateur utilisateur = new Utilisateur(num, n, p, adresseEmail, motDePasse, type);
-					utilisateurs.add(utilisateur);
+					utilisateur = new Utilisateur(num, n, p, adresseEmail, motDePasse, type);
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		return utilisateurs;
+		return utilisateur;
 	}
 				
 

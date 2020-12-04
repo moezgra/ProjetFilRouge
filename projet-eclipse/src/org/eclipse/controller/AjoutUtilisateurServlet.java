@@ -20,7 +20,7 @@ import org.eclipse.service.UtilisateurService;
 
 
 
-@WebServlet("/AjoutUtilisateurServlet")
+@WebServlet("/AjoutUtilisateur")
 public class AjoutUtilisateurServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -41,8 +41,8 @@ public class AjoutUtilisateurServlet extends HttpServlet {
 		String nom = request.getParameter("nom");
 		String prenom = request.getParameter("prenom");
 		UtilisateurService utilisateurService = new UtilisateurService();
-		Utilisateur utilisateur = new Utilisateur(type, adresseEmail, motDePasse, nom, prenom );
+		Utilisateur utilisateur = new Utilisateur(nom, prenom,  adresseEmail, motDePasse, type);
 		utilisateurService.save(utilisateur);
-		doGet(request, response);
+		response.sendRedirect("Connexion");
 	}	
 }	
